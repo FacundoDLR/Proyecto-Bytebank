@@ -2,7 +2,7 @@
 public class TestMetodos {
 
 	public static void main(String[] args) {
-		Cuenta cuentaFacu = new Cuenta();
+		Cuenta cuentaFacu = new Cuenta(26, 8);
 		cuentaFacu.depositar(300);
 		System.out.println("cuenta Facu" + cuentaFacu.getSaldo());
 		
@@ -12,7 +12,7 @@ public class TestMetodos {
 		cuentaFacu.retirar(300);
 		System.out.println("cuenta Facu" + cuentaFacu.getSaldo());
 		
-		Cuenta cuentaMaria = new Cuenta();
+		Cuenta cuentaMaria = new Cuenta(96, 6);
 		cuentaMaria.depositar(1000);
 		System.out.println(cuentaMaria.getSaldo());
 		cuentaMaria.transferir(600, cuentaFacu);
@@ -24,5 +24,6 @@ public class TestMetodos {
 		System.out.println("El nuevo saldo de cuenta Facu es " + cuentaFacu.getSaldo());
 		System.out.println("El nuevo saldo de cuenta Maria es " + cuentaMaria.getSaldo());
 		
+		System.out.println ("total de cuentas creadas = " + Cuenta.getTotal());
 	}
 }

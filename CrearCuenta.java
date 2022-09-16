@@ -2,7 +2,7 @@
 public class CrearCuenta {
 
 	public static void main(String[] args) {
-        Cuenta primeraCuenta = new Cuenta();
+        Cuenta primeraCuenta = new Cuenta(22, 3);
         primeraCuenta.depositar(200);
         System.out.println(primeraCuenta.getSaldo());
         primeraCuenta.setNumero(23);
@@ -11,7 +11,7 @@ public class CrearCuenta {
         primeraCuenta.depositar(100);
         System.out.println(primeraCuenta.getSaldo());
 
-        Cuenta segundaCuenta = new Cuenta();
+        Cuenta segundaCuenta = new Cuenta(89, 32);
         segundaCuenta.depositar(50);
 
         System.out.println("primera cuenta tiene " + primeraCuenta.getSaldo());

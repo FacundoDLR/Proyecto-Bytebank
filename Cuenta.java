@@ -4,12 +4,30 @@ public class Cuenta {
 	private int agencia;
 	private int numero;
 	private Cliente cliente;
+	private static int total = 0;
+	
+	public Cuenta(int agencia, int numero) {
+		this.agencia = agencia;
+		this.numero = numero;
+		this.saldo = 100; // esto significa que cada nueva cuenta incia con este saldo declarado.
+		total++;
+		System.out.println("Creando una nueva cuenta con un saldo de " + this.saldo);
+		System.out.println("El total de ceuntas hasta ahora es de = " + total);
+	}
+	
+	public static int getTotal() {
+		return Cuenta.total;
+	}
 	
 	public double getSaldo() {
 		return this.saldo;
 	}
 	
 	public void setNumero(int numero) {
+		if(numero <= 0) {
+			System.out.println("El valor numero NO puede ser menor o igual a cero");
+			return;
+		}
 		this.numero = numero;
 	}
 	
@@ -18,6 +36,10 @@ public class Cuenta {
 	}
 	
 	public void setAgencia(int agencia) {
+		if(agencia <= 0) {
+			System.out.println("El valor agencia NO puede ser menor o igual a cero");
+			return;
+		}
 		this.agencia = agencia;
 	}
 	
